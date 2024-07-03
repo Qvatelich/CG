@@ -1225,11 +1225,11 @@ MonoBehaviour:
   _cubAnim: {fileID: 526575793}
   _cardsInfo:
   - {fileID: 0}
+  - {fileID: 11400000, guid: 85ca529cc0d8a7b43bec946b17e86434, type: 2}
   - {fileID: 11400000, guid: bf0b2f0494e2f2846a4439891e573f12, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: f6e176153e6b59a40a0feb0a7ac9625b, type: 2}
+  - {fileID: 11400000, guid: 4ae612747a1f31942a0e4331fb43ad7a, type: 2}
+  - {fileID: 11400000, guid: abc5f303063b57a4bb20b7710f39763a, type: 2}
   _cubVar:
   - {fileID: 1504943462, guid: 5428bde01cd2714409e878b5ea71f7f4, type: 3}
   - {fileID: -1773941937, guid: 5428bde01cd2714409e878b5ea71f7f4, type: 3}
@@ -2681,6 +2681,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deck: {fileID: 0}
+  _shop: {fileID: 0}
+  _deckButton: {fileID: 0}
+  _shopButton: {fileID: 0}
   _settingsPanel: {fileID: 0}
   _speebNormalsprite: {fileID: 250846679, guid: 2597f72b5ae5e47429ba340c47de9912, type: 3}
   _speebUpsprite: {fileID: 1909082669, guid: 2597f72b5ae5e47429ba340c47de9912, type: 3}

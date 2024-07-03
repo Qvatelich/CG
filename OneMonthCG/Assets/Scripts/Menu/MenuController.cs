@@ -15,17 +15,11 @@ public class MenuController : MonoBehaviour
             _money = 150;
             PlayerPrefs.SetInt("Money",_money);
         }
+    }
 
+    private void Update()
+    {
+        _money = PlayerPrefs.GetInt("Money");
         _moneyText.text = _money.ToString();
-    }
-
-    public void BuyCard()
-    {
-
-    }
-
-    private void CheckPosition()
-    {
-
     }
 }

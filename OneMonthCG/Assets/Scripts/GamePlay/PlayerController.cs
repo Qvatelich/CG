@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
-        int oneCard = PlayerPrefs.GetInt("OneC");
-        int twoCard = PlayerPrefs.GetInt("TwoC");
-        int threeCard = PlayerPrefs.GetInt("ThreeC");
-        int fourCard = PlayerPrefs.GetInt("FourC");
+        int oneCard = PlayerPrefs.GetInt("1C");
+        int twoCard = PlayerPrefs.GetInt("2C");
+        int threeCard = PlayerPrefs.GetInt("3C");
+        int fourCard = PlayerPrefs.GetInt("4C");
 
         int[] cardValues = new int[4] { oneCard, twoCard, threeCard, fourCard };
         for(int i = 0; i < cards.Count; i++)
