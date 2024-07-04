@@ -11,7 +11,6 @@ public class CardsPanel : MonoBehaviour
     {
         for (int i = 0; i < _cards.Count; i++)
         {
-            Debug.Log((i + 1).ToString() + "C");
             int value = PlayerPrefs.GetInt((i+1).ToString()+"C");
             _cards[i].sprite = _cardsVar[value];
         }

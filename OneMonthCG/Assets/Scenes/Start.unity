@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _warning: {fileID: 2145092884}
+  _main: {fileID: 1107661629}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &90800489
@@ -1044,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _warning: {fileID: 1964439390}
+  _main: {fileID: 1109904960}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &128285207
@@ -1955,6 +1957,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179333465}
   m_CullTransparentMesh: 1
+--- !u!1 &179750843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179750844}
+  - component: {fileID: 179750846}
+  - component: {fileID: 179750845}
+  m_Layer: 5
+  m_Name: NonCardWarning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &179750844
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179750843}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1463894757}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 218}
+  m_SizeDelta: {x: -1110.67, y: -798.67}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &179750845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179750843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e4cb351c0884b2c4e90ec6f6b873841d, type: 3}
+    m_FontSize: 92
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 97
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u041F\u0443\u0441\u0442\u0430\u044F \u043A\u043E\u043B\u043E\u0434\u0430!"
+--- !u!222 &179750846
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179750843}
+  m_CullTransparentMesh: 1
 --- !u!1 &189663818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 3
   _warning: {fileID: 910276589}
+  _main: {fileID: 1107661629}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &195103029
@@ -3714,7 +3796,7 @@ GameObject:
   - component: {fileID: 443493643}
   - component: {fileID: 443493644}
   m_Layer: 5
-  m_Name: 1
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3849,6 +3931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 1642178765}
+  _costObj: {fileID: 1205995911}
   _cards:
   - {fileID: 1820892931}
   - {fileID: 1215670777}
@@ -3856,6 +3939,8 @@ MonoBehaviour:
   - {fileID: 1475629711}
   _cardValue: 1
   _cost: 50
+  _icon: {fileID: 21300000, guid: 62f7ac19ecb7b2640ac3331837c028c5, type: 3}
+  _image: {fileID: 1323105352}
 --- !u!1 &444679987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,6 +4921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _warning: {fileID: 1196601567}
+  _main: {fileID: 1109904960}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &563563762
@@ -5961,7 +6047,7 @@ GameObject:
   - component: {fileID: 661136944}
   - component: {fileID: 661136945}
   m_Layer: 5
-  m_Name: 3
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6040,6 +6126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 898136763}
+  _costObj: {fileID: 2048397625}
   _cards:
   - {fileID: 785638988}
   - {fileID: 1633619263}
@@ -6047,6 +6134,8 @@ MonoBehaviour:
   - {fileID: 1722819754}
   _cardValue: 3
   _cost: 50
+  _icon: {fileID: 14364430, guid: a5f2473d39340984a9cd3cc37e3ecf70, type: 3}
+  _image: {fileID: 671023683}
 --- !u!114 &661136945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6525,6 +6614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 2
   _warning: {fileID: 1885350512}
+  _main: {fileID: 1109904960}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &743464527
@@ -6808,6 +6898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _warning: {fileID: 96774421}
+  _main: {fileID: 661136944}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &785638989
@@ -7530,7 +7621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &950413534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8803,7 +8894,7 @@ GameObject:
   - component: {fileID: 1107661629}
   - component: {fileID: 1107661630}
   m_Layer: 5
-  m_Name: 2
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8882,6 +8973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 543740855}
+  _costObj: {fileID: 1143856375}
   _cards:
   - {fileID: 1198517883}
   - {fileID: 2140824056}
@@ -8889,6 +8981,8 @@ MonoBehaviour:
   - {fileID: 90800488}
   _cardValue: 2
   _cost: 50
+  _icon: {fileID: 21300000, guid: 8b8eb9bbcc4eb7e4fa6daa68bd90cd4a, type: 3}
+  _image: {fileID: 1492638965}
 --- !u!114 &1107661630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9038,7 +9132,7 @@ GameObject:
   - component: {fileID: 1109904960}
   - component: {fileID: 1109904959}
   m_Layer: 5
-  m_Name: 4
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9173,6 +9267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 1582294256}
+  _costObj: {fileID: 1564529532}
   _cards:
   - {fileID: 563563761}
   - {fileID: 743464526}
@@ -9180,6 +9275,8 @@ MonoBehaviour:
   - {fileID: 128285206}
   _cardValue: 4
   _cost: 150
+  _icon: {fileID: -1715411432, guid: b9c7abc179676254e8e8e02de09d7995, type: 3}
+  _image: {fileID: 444679989}
 --- !u!1 &1143856375
 GameObject:
   m_ObjectHideFlags: 0
@@ -9695,6 +9792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 3
   _warning: {fileID: 1273177050}
+  _main: {fileID: 443493644}
   Cardvalue: 1
   Cost: 50
 --- !u!1 &1180799723
@@ -9870,6 +9968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _warning: {fileID: 83204706}
+  _main: {fileID: 1107661629}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &1198517884
@@ -10195,6 +10294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 2
   _warning: {fileID: 1589492777}
+  _main: {fileID: 443493644}
   Cardvalue: 1
   Cost: 50
 --- !u!1 &1218247139
@@ -11326,7 +11426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 62f7ac19ecb7b2640ac3331837c028c5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11810,6 +11910,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1641204845}
+  - {fileID: 179750844}
   - {fileID: 1965946451}
   - {fileID: 1489394655}
   - {fileID: 610458319}
@@ -11839,9 +11940,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deck: {fileID: 1109775032}
   _shop: {fileID: 950413533}
+  _settingsPanel: {fileID: 975046592}
+  _nonCardWarning: {fileID: 179750843}
   _deckButton: {fileID: 996154001}
   _shopButton: {fileID: 1083692266}
-  _settingsPanel: {fileID: 975046592}
   _speebNormalsprite: {fileID: 0}
   _speebUpsprite: {fileID: 0}
   _speedUp: {fileID: 0}
@@ -12151,6 +12253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _warning: {fileID: 1658174114}
+  _main: {fileID: 443493644}
   Cardvalue: 1
   Cost: 50
 --- !u!1 &1485146666
@@ -13639,6 +13742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 2
   _warning: {fileID: 1897068859}
+  _main: {fileID: 661136944}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &1633619264
@@ -14017,6 +14121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 4
   _warning: {fileID: 414800330}
+  _main: {fileID: 661136944}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &1722819755
@@ -14528,6 +14633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 3
   _warning: {fileID: 525016462}
+  _main: {fileID: 661136944}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &1796080247
@@ -14923,6 +15029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _warning: {fileID: 1846090700}
+  _main: {fileID: 443493644}
   Cardvalue: 1
   Cost: 50
 --- !u!1 &1826050444
@@ -15061,6 +15168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 3
   _warning: {fileID: 172216381}
+  _main: {fileID: 1109904960}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &1827155688
@@ -17091,6 +17199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 2
   _warning: {fileID: 1298781128}
+  _main: {fileID: 1107661629}
   Cardvalue: 1
   Cost: 50
 --- !u!114 &2140824057

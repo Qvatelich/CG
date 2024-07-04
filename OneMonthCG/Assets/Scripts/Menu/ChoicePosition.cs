@@ -4,6 +4,7 @@ public class ChoicePosition : MonoBehaviour
 {
     [SerializeField] private int _value;
     [SerializeField] private GameObject _warning;
+    [SerializeField] private CardButton _main;
 
     public int Cardvalue;
     public int Cost;
@@ -37,6 +38,8 @@ public class ChoicePosition : MonoBehaviour
             PlayerPrefs.SetInt("Money",money);
             PlayerPrefs.SetInt(_value.ToString() + "C", Cardvalue);
             _warning.SetActive(false);
+            GameObject.FindGameObjectWithTag("ShopCardPanel").SetActive(false);
+            _main.Buy();
         }
     }
 }
