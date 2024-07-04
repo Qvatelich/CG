@@ -4,7 +4,7 @@ using UnityEngine;
 public class CardButton : MonoBehaviour
 {
     [SerializeField] private GameObject _cardPanel;
-    [SerializeField] private List<ÑhoicePosition> _cards;
+    [SerializeField] private List<ChoicePosition> _cards;
 
     [SerializeField] private int _cardValue;
     [SerializeField] private int _cost;
@@ -12,7 +12,7 @@ public class CardButton : MonoBehaviour
 
     public void BuyCard()
     {
-        foreach (ÑhoicePosition card in _cards)
+        foreach (ChoicePosition card in _cards)
         {
             card.Cardvalue = _cardValue;
             card.Cost = _cost;

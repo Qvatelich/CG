@@ -12,6 +12,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private Sprite _speebNormalsprite;
     [SerializeField] private Sprite _speebUpsprite;
     [SerializeField] private Image _speedUp;
+    [SerializeField] private CardsPanel _cardPanel;
 
     public void StartFreeGame()
     {
@@ -25,6 +26,7 @@ public class ButtonManager : MonoBehaviour
 
     public void Deck()
     {
+        _cardPanel.Start();
         _deck.SetActive(!_deck.activeSelf);
         _deckButton.Exit();
     }

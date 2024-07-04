@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,16 +26,12 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
-        int oneCard = PlayerPrefs.GetInt("1C");
-        int twoCard = PlayerPrefs.GetInt("2C");
-        int threeCard = PlayerPrefs.GetInt("3C");
-        int fourCard = PlayerPrefs.GetInt("4C");
 
-        int[] cardValues = new int[4] { oneCard, twoCard, threeCard, fourCard };
         for(int i = 0; i < cards.Count; i++)
         {
-            cards[i].info = _cardsInfo[cardValues[i]];
-            cards[i].CardStart();
+            int id = PlayerPrefs.GetInt((i+1).ToString() + "C");
+            cards[cards.Count-1 - i].info = _cardsInfo[id];
+            cards[cards.Count-1 - i].CardStart();
         }
         _AI.StartAi();
     }

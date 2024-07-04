@@ -3223,6 +3223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321246537}
+  - component: {fileID: 321246538}
   m_Layer: 5
   m_Name: Deck
   m_TagString: Untagged
@@ -3254,6 +3255,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -291}
   m_SizeDelta: {x: 977.84, y: 335.03}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &321246538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321246536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ccf1e9dc50c5148bd3bc19814534ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardsVar:
+  - {fileID: 21300000, guid: 0a316dc533d11804c88e4e46fc0f92b1, type: 3}
+  - {fileID: 21300000, guid: 62f7ac19ecb7b2640ac3331837c028c5, type: 3}
+  - {fileID: 21300000, guid: 8b8eb9bbcc4eb7e4fa6daa68bd90cd4a, type: 3}
+  - {fileID: 14364430, guid: a5f2473d39340984a9cd3cc37e3ecf70, type: 3}
+  - {fileID: -1715411432, guid: b9c7abc179676254e8e8e02de09d7995, type: 3}
+  - {fileID: 1348103100, guid: 24c01308aa96d5a4da8652d58f5de2d6, type: 3}
+  _cards:
+  - {fileID: 1243054317}
+  - {fileID: 132054451}
+  - {fileID: 876445807}
+  - {fileID: 1625300626}
 --- !u!1 &332439013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,7 +3849,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 1642178765}
-  _cards: []
+  _cards:
+  - {fileID: 1820892931}
+  - {fileID: 1215670777}
+  - {fileID: 1178704805}
+  - {fileID: 1475629711}
   _cardValue: 1
   _cost: 50
 --- !u!1 &444679987
@@ -6011,7 +6040,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 898136763}
-  _cards: []
+  _cards:
+  - {fileID: 785638988}
+  - {fileID: 1633619263}
+  - {fileID: 1796080246}
+  - {fileID: 1722819754}
   _cardValue: 3
   _cost: 50
 --- !u!114 &661136945
@@ -8849,7 +8882,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 543740855}
-  _cards: []
+  _cards:
+  - {fileID: 1198517883}
+  - {fileID: 2140824056}
+  - {fileID: 195103028}
+  - {fileID: 90800488}
   _cardValue: 2
   _cost: 50
 --- !u!114 &1107661630
@@ -9136,7 +9173,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardPanel: {fileID: 1582294256}
-  _cards: []
+  _cards:
+  - {fileID: 563563761}
+  - {fileID: 743464526}
+  - {fileID: 1827155687}
+  - {fileID: 128285206}
   _cardValue: 4
   _cost: 150
 --- !u!1 &1143856375
@@ -11804,6 +11845,7 @@ MonoBehaviour:
   _speebNormalsprite: {fileID: 0}
   _speebUpsprite: {fileID: 0}
   _speedUp: {fileID: 0}
+  _cardPanel: {fileID: 321246538}
 --- !u!1 &1467788935
 GameObject:
   m_ObjectHideFlags: 0

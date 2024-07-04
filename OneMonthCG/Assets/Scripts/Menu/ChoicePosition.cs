@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class СhoicePosition : MonoBehaviour
+public class ChoicePosition : MonoBehaviour
 {
     [SerializeField] private int _value;
     [SerializeField] private GameObject _warning;
