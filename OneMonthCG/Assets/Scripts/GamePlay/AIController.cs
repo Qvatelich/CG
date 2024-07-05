@@ -9,7 +9,8 @@ public class AIController : MonoBehaviour
     [SerializeField] private PlayerController _player;
     [SerializeField] private List<Sprite> _cubVar;
     [SerializeField] private Image _cubImage;
-    [SerializeField] List<CardInfo> _cardsInfo;
+    [SerializeField] private List<CardInfo> _cardsInfo;
+    [SerializeField] private GameObject _endGame;
 
     public bool isMotion = true;
     public List<Card> currentEnemy;
@@ -19,16 +20,35 @@ public class AIController : MonoBehaviour
     public void StartAi()
     {
         _cubVar = _player._cubVar;
-        foreach (var card in cards)
+        _cardsInfo = _player.CardsInfo;
+
+        int level = PlayerPrefs.GetInt("Level");
+
+        /* if (level <= 10)
+         {
+             CreateDeck(0, 6);//до 6 временно, так до 7
+         }*/
+        /*else if (level <= 20)
         {
-            int i = Random.Range(0, _cardsInfo.Count);
-            card.info = _cardsInfo[i];
-            card.CardStart();
-        }
+            CreateDeck(3,10);
+        }*/
+
+        CreateDeck(0,6);
+
         currentEnemy = _player.cards;
         CurrentEnemyCheck();
         _player.currentEnemy = cards;
         _player.CurrentEnemyCheck();
+    }
+
+    private void CreateDeck(int one,int two)
+    {
+        foreach (var card in cards)
+        {
+            int i = Random.Range(one, two);
+            card.info = _cardsInfo[i];
+            card.CardStart();
+        }
     }
 
     public void Motion()
@@ -67,7 +87,9 @@ public class AIController : MonoBehaviour
     {
         if (currentEnemyValue >= cards.Count)
         {
-            SceneManager.LoadScene(1);
+            _endGame.SetActive(true);
+            _player.StopAllCoroutines();
+            return;
         }
         else if (currentEnemyValue >= 0)
         {

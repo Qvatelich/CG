@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private AIController _AI;
     [SerializeField] private Image _cubImage;
+    [SerializeField] private Text _levelCount;
     [SerializeField] private GameObject _yourMotionObject;
     [SerializeField] private GameObject _notYourMotionObject;
+    [SerializeField] private GameObject _win;
     [SerializeField] private Animator _cubAnim;
-    [SerializeField] List<CardInfo> _cardsInfo;
 
     private const float _time = 2.5f;
     private bool _isUpSpeed;
 
+    public List<CardInfo> CardsInfo;
     public List<Sprite> _cubVar;
     public List<Card> currentEnemy;
     public List<Card> cards;
@@ -26,11 +26,11 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
-
-        for(int i = 0; i < cards.Count; i++)
+        _levelCount.text = "Уровень: " + PlayerPrefs.GetInt("Level").ToString();
+        for (int i = 0; i < cards.Count; i++)
         {
             int id = PlayerPrefs.GetInt((i+1).ToString() + "C");
-            cards[cards.Count-1 - i].info = _cardsInfo[id];
+            cards[cards.Count-1 - i].info = CardsInfo[id];
             cards[cards.Count-1 - i].CardStart();
         }
         _AI.StartAi();
@@ -40,7 +40,10 @@ public class PlayerController : MonoBehaviour
     {
         if (currentEnemyValue >= cards.Count)
         {
-            SceneManager.LoadScene(1);
+            PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
+            StopAllCoroutines();
+            _win.SetActive(true);
+            return;
         }
         else if (currentEnemyValue >= 0)
         {
@@ -65,19 +68,15 @@ public class PlayerController : MonoBehaviour
 
     public void CubClick()
     {
-        if (isMotion)
+        if (isMotion && !_win.activeSelf)
         {
             Motion();
             StartCoroutine(Ai());
         }
-
-        /*foreach (Card item in cards)
+        if (_win.activeSelf)
         {
-            if (currentEnemyValue < cards.Count && currentEnemyValue >= 0)
-            {
-                item.CurrentEnemy = currentEnemy[currentEnemyValue];
-            }
-        }*/
+            _cubAnim.GetComponent<Animator>().enabled = false;
+        }
     }
 
     private void Motion()
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Ai()
     {
-        if (_isUpSpeed)
+        if (_isUpSpeed&&!_win.activeSelf)
         {
             float speed = 0.35f;
             ChekMotion(true);
@@ -141,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     private void ChekMotion(bool f)
     {
-        if (_yourMotionObject != null && _cubAnim != null)
+        if (_yourMotionObject != null && _cubAnim != null && !_win.activeSelf)
         {
             _cubAnim.GetComponent<Animator>().enabled = isMotion;
             _yourMotionObject.SetActive(f);
