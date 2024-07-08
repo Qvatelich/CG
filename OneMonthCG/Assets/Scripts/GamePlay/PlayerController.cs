@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             int money = PlayerPrefs.GetInt("MoneyInLevel");
             int newMoney = Random.Range(PlayerPrefs.GetInt("Level")+1,PlayerPrefs.GetInt("Level")+11 );
 
-            _moneyInLevel.text = "полученные монеты: " + money.ToString() + " + " + newMoney.ToString();
+            _moneyInLevel.text = "полученные монеты: " + money.ToString() + "+" + newMoney.ToString();
 
             PlayerPrefs.SetInt("MoneyInLevel",money + newMoney);
             _win.SetActive(true);

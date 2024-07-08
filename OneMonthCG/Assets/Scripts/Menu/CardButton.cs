@@ -7,19 +7,25 @@ public class CardButton : MonoBehaviour
     [SerializeField] private GameObject _cardPanel;
     [SerializeField] private GameObject _costObj;
     [SerializeField] private List<ChoicePosition> _cards;
-    [SerializeField] private int _cardValue;
-    [SerializeField] private int _cost;
-    [SerializeField] private Sprite _icon;
+
+    public int CardValue; 
+    public int Cost;
+    public Sprite Icon;
 
     [SerializeField] Image _image;
 
-    private void Start()
+    public void StartShop()
     {
-        _costObj.GetComponent<Text>().text = _cost.ToString();
-        _image.sprite = _icon;
-        if (_icon == null)
+        _image.enabled = true;
+        _costObj.SetActive(true);
+
+        _costObj.GetComponent<Text>().text = Cost.ToString();
+        _image.sprite = Icon;
+        if (Icon == null)
         {
             _image.enabled = false;
+            _costObj.SetActive(false);
+            _image.sprite = null;
         }
     }
 
@@ -29,8 +35,8 @@ public class CardButton : MonoBehaviour
         {
             foreach (ChoicePosition card in _cards)
             {
-                card.Cardvalue = _cardValue;
-                card.Cost = _cost;
+                card.Cardvalue = CardValue;
+                card.Cost = Cost;
             }
 
             GameObject[] activePanels = GameObject.FindGameObjectsWithTag("ShopCardPanel");

@@ -1666,6 +1666,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6e176153e6b59a40a0feb0a7ac9625b, type: 2}
   - {fileID: 11400000, guid: 4ae612747a1f31942a0e4331fb43ad7a, type: 2}
   - {fileID: 11400000, guid: abc5f303063b57a4bb20b7710f39763a, type: 2}
+  - {fileID: 11400000, guid: e3532cb3c73bd2547a255611127cc33d, type: 2}
+  - {fileID: 11400000, guid: 7ddd2c0445e0f9f4795ceb48e6e2a6e5, type: 2}
+  - {fileID: 11400000, guid: 8fb0f82c3a9646045b150e59236f6739, type: 2}
+  - {fileID: 11400000, guid: bcdcf82f2b806ab4fb02879ba7035ba8, type: 2}
   _cubVar:
   - {fileID: 1504943462, guid: 5428bde01cd2714409e878b5ea71f7f4, type: 3}
   - {fileID: -1773941937, guid: 5428bde01cd2714409e878b5ea71f7f4, type: 3}
@@ -1753,7 +1757,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u044B\u0435 \u043C\u043E\u043D\u0435\u0442\u044B:
-    9+5"
+    91+52"
 --- !u!222 &707976168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4219,7 +4223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1937526374
 RectTransform:
   m_ObjectHideFlags: 0
