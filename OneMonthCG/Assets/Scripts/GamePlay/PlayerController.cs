@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _yourMotionObject;
     [SerializeField] private GameObject _notYourMotionObject;
     [SerializeField] private GameObject _win;
+    [SerializeField] private GameObject _cubAudio;
     [SerializeField] private Animator _cubAnim;
 
     private const float _time = 2.5f;
@@ -93,6 +94,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isMotion)
         {
+            GameObject _audio = Instantiate(_cubAudio);
+            Destroy(_audio,2f);
+
             cubValue = Random.Range(1, 7);
             _cubImage.sprite = _cubVar[cubValue - 1];
             isMotion = false;

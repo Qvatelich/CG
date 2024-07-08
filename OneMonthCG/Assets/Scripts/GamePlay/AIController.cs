@@ -11,6 +11,7 @@ public class AIController : MonoBehaviour
     [SerializeField] private Image _cubImage;
     [SerializeField] private List<CardInfo> _cardsInfo;
     [SerializeField] private GameObject _endGame;
+    [SerializeField] private GameObject _cubAudio;
 
     public bool isMotion = true;
     public List<Card> currentEnemy;
@@ -55,6 +56,9 @@ public class AIController : MonoBehaviour
     {
         if (isMotion)
         {
+            GameObject _audio = Instantiate(_cubAudio);
+            Destroy(_audio, 2f);
+
             cubValue = Random.Range(1, 7);
             _cubImage.sprite = _cubVar[cubValue - 1];
             isMotion = false;
