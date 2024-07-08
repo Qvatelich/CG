@@ -42,6 +42,8 @@ public class ButtonManager : MonoBehaviour
 
     public void EndFreeGame()
     {
+        PlayerPrefs.SetInt("Money",PlayerPrefs.GetInt("MoneyInLevel") + PlayerPrefs.GetInt("Money"));
+        PlayerPrefs.SetInt("MoneyInLevel",0);
         SceneManager.LoadScene(0);
     }
 

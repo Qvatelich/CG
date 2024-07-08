@@ -87,6 +87,7 @@ public class AIController : MonoBehaviour
     {
         if (currentEnemyValue >= cards.Count)
         {
+            PlayerPrefs.SetInt("MoneyInLevel",0);
             _endGame.SetActive(true);
             _player.StopAllCoroutines();
             return;

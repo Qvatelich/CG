@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AIController _AI;
     [SerializeField] private Image _cubImage;
     [SerializeField] private Text _levelCount;
+    [SerializeField] private Text _moneyInLevel;
     [SerializeField] private GameObject _yourMotionObject;
     [SerializeField] private GameObject _notYourMotionObject;
     [SerializeField] private GameObject _win;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
+        int level = PlayerPrefs.GetInt("Level");
+        level = level == 0 ? 1 : level;
         _levelCount.text = "Уровень: " + PlayerPrefs.GetInt("Level").ToString();
         for (int i = 0; i < cards.Count; i++)
         {
@@ -42,6 +45,13 @@ public class PlayerController : MonoBehaviour
         {
             PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
             StopAllCoroutines();
+
+            int money = PlayerPrefs.GetInt("MoneyInLevel");
+            int newMoney = Random.Range(PlayerPrefs.GetInt("Level")+1,PlayerPrefs.GetInt("Level")+11 );
+
+            _moneyInLevel.text = "полученные монеты: " + money.ToString() + " + " + newMoney.ToString();
+
+            PlayerPrefs.SetInt("MoneyInLevel",money + newMoney);
             _win.SetActive(true);
             return;
         }
