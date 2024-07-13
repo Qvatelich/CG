@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         int level = PlayerPrefs.GetInt("Level");
         level = level == 0 ? 1 : level;
+        PlayerPrefs.SetInt("Level",level);
         _levelCount.text = "Уровень: " + PlayerPrefs.GetInt("Level").ToString();
         for (int i = 0; i < cards.Count; i++)
         {

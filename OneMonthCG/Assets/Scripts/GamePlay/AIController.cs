@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AIController : MonoBehaviour
@@ -13,6 +12,8 @@ public class AIController : MonoBehaviour
     [SerializeField] private GameObject _endGame;
     [SerializeField] private GameObject _cubAudio;
 
+    private int _level;
+
     public bool isMotion = true;
     public List<Card> currentEnemy;
     public List<Card> cards;
@@ -23,18 +24,9 @@ public class AIController : MonoBehaviour
         _cubVar = _player._cubVar;
         _cardsInfo = _player.CardsInfo;
 
-        int level = PlayerPrefs.GetInt("Level");
+        _level = PlayerPrefs.GetInt("Level");
 
-        /* if (level <= 10)
-         {
-             CreateDeck(0, 6);//до 6 временно, так до 7
-         }*/
-        /*else if (level <= 20)
-        {
-            CreateDeck(3,10);
-        }*/
-
-        CreateDeck(0,6);
+        CreateDeck();
 
         currentEnemy = _player.cards;
         CurrentEnemyCheck();
@@ -42,13 +34,72 @@ public class AIController : MonoBehaviour
         _player.CurrentEnemyCheck();
     }
 
-    private void CreateDeck(int one,int two)
+    private void CreateDeck()
     {
-        foreach (var card in cards)
+        if (_level <= 10)
         {
-            int i = Random.Range(one, two);
-            card.info = _cardsInfo[i];
-            card.CardStart();
+            int value = 0;
+            foreach (var card in cards)
+            {
+                int i = Random.Range(0, 4);
+                card.info = _cardsInfo[i];
+                if (i != 0)
+                {
+                    value++;
+                }
+                card.CardStart();
+            }
+            if (value == 4 || value == 0)
+            {
+                CreateDeck();
+            }
+        }
+        else if (_level > 10 && _level <= 15)
+        {
+            int r = Random.Range(0, 2);
+            if (r == 0)
+            {
+                int c2 = Random.Range(0, cards.Count);
+                for (int i = 0; i < cards.Count; i++)
+                {
+                    if (i == c2)
+                    {
+                        int e = Random.Range(4, 7);
+                        cards[i].info = _cardsInfo[e];
+                    }
+                    else
+                    {
+                        cards[i].info = _cardsInfo[Random.Range(0, 4)];
+                    }
+                    cards[i].CardStart();
+                }
+            }
+            if (r == 1)
+            {
+                for (int i = 0; i < cards.Count; i++)
+                {
+                    cards[i].info = _cardsInfo[Random.Range(1, 4)];
+                    cards[i].CardStart();
+                }
+            }
+        }
+        else if (_level > 15 && _level <= 20)
+        {
+            int c2One = Random.Range(0, cards.Count);
+            int c2Two = Random.Range(0, cards.Count);
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (i == c2One || i == c2Two)
+                {
+                    int e = Random.Range(4, 7);
+                    cards[i].info = _cardsInfo[e];
+                }
+                else
+                {
+                    cards[i].info = _cardsInfo[Random.Range(0, 4)];
+                }
+                cards[i].CardStart();
+            }
         }
     }
 
@@ -59,7 +110,7 @@ public class AIController : MonoBehaviour
             GameObject _audio = Instantiate(_cubAudio);
             Destroy(_audio, 2f);
 
-            cubValue = Random.Range(1, 7);
+            cubValue = UnityEngine.Random.Range(1, 7);
             _cubImage.sprite = _cubVar[cubValue - 1];
             isMotion = false;
 
