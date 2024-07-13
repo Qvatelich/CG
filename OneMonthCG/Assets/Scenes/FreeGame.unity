@@ -1659,6 +1659,7 @@ MonoBehaviour:
   _win: {fileID: 2016190849}
   _cubAudio: {fileID: 2330013007142372433, guid: 596033334bfa3b14bb3af3fb43ce11c0, type: 3}
   _cubAnim: {fileID: 526575793}
+  _winAudio: {fileID: 298678035731477587, guid: 9b72df37da9428349b9373c4963f9b9f, type: 3}
   CardsInfo:
   - {fileID: 0}
   - {fileID: 11400000, guid: 85ca529cc0d8a7b43bec946b17e86434, type: 2}
@@ -3347,6 +3348,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf0b2f0494e2f2846a4439891e573f12, type: 2}
   - {fileID: 0}
   _endGame: {fileID: 1583004559}
+  _loseAudio: {fileID: 6638660236121758665, guid: 6c49cc81d93cbca43b3b9594a32ffdb4, type: 3}
   _cubAudio: {fileID: 2330013007142372433, guid: 596033334bfa3b14bb3af3fb43ce11c0, type: 3}
   isMotion: 0
   currentEnemy: []

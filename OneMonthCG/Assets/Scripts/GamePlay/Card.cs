@@ -20,7 +20,6 @@ public class Card : MonoBehaviour
 
     public void CardStart()
     {
-        _maxHp = info == null ? 0 : info.hp;
         if (info == null)
         {
             gameObject.SetActive(false);
@@ -32,6 +31,7 @@ public class Card : MonoBehaviour
             _sprite = GetComponent<Image>();
             _sprite.sprite = info.icon;
             _hpText.text = _hp.ToString();
+            _maxHp = _hp;
         }
     }
 

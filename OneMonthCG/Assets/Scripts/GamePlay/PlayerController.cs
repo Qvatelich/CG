@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _win;
     [SerializeField] private GameObject _cubAudio;
     [SerializeField] private Animator _cubAnim;
+    [SerializeField] private GameObject _winAudio;
 
     private const float _time = 2.5f;
     private bool _isUpSpeed;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentEnemyValue >= cards.Count)
         {
+            Instantiate(_winAudio);
             PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
             StopAllCoroutines();
 

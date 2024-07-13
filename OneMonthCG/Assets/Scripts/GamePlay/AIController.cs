@@ -10,6 +10,7 @@ public class AIController : MonoBehaviour
     [SerializeField] private Image _cubImage;
     [SerializeField] private List<CardInfo> _cardsInfo;
     [SerializeField] private GameObject _endGame;
+    [SerializeField] private GameObject _loseAudio;
     [SerializeField] private GameObject _cubAudio;
 
     private int _level;
@@ -54,7 +55,23 @@ public class AIController : MonoBehaviour
                 CreateDeck();
             }
         }
-        else if (_level > 10 && _level <= 15)
+        if (_level >= 10 && _level <= 15)
+        {
+            int c0 = Random.Range(0, cards.Count + 1);
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (i == c0)
+                {
+                    cards[i].info = _cardsInfo[0];
+                }
+                else
+                {
+                    cards[i].info = _cardsInfo[Random.Range(1, 4)];
+                }
+                cards[i].CardStart();
+            }
+        }
+        else if (_level > 15  )
         {
             int r = Random.Range(0, 2);
             if (r == 0)
@@ -83,7 +100,32 @@ public class AIController : MonoBehaviour
                 }
             }
         }
-        else if (_level > 15 && _level <= 20)
+        else if (_level > 20 && _level <= 25)
+        {
+            int c2One = Random.Range(0, cards.Count);
+            int c2Two = Random.Range(0, cards.Count);
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (i == c2One || i == c2Two)
+                {
+                    int e = Random.Range(4, 8);
+                    if (e == 7)
+                    {
+                        cards[i].info = _cardsInfo[Random.Range(1, 4)];
+                    }
+                    else
+                    {
+                        cards[i].info = _cardsInfo[e];
+                    }
+                }
+                else
+                {
+                    cards[i].info = _cardsInfo[Random.Range(0, 4)];
+                }
+                cards[i].CardStart();
+            }
+        }
+        else if (_level > 25 && _level <= 30)
         {
             int c2One = Random.Range(0, cards.Count);
             int c2Two = Random.Range(0, cards.Count);
@@ -96,7 +138,7 @@ public class AIController : MonoBehaviour
                 }
                 else
                 {
-                    cards[i].info = _cardsInfo[Random.Range(0, 4)];
+                    cards[i].info = _cardsInfo[Random.Range(1, 4)];
                 }
                 cards[i].CardStart();
             }
@@ -144,6 +186,7 @@ public class AIController : MonoBehaviour
         {
             PlayerPrefs.SetInt("MoneyInLevel",0);
             _endGame.SetActive(true);
+            Instantiate(_loseAudio);
             _player.StopAllCoroutines();
             return;
         }
