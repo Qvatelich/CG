@@ -34,7 +34,8 @@ public class ChoicePosition : MonoBehaviour
         int money = PlayerPrefs.GetInt("Money");
         if (money >= Cost)
         {
-            money-=Cost;
+            GetComponent<ButtonAnim>().AudioClick();
+            money -=Cost;
             PlayerPrefs.SetInt("Money",money);
             PlayerPrefs.SetInt(_value.ToString() + "C", Cardvalue);
             _warning.SetActive(false);

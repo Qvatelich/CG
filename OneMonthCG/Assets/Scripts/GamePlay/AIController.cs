@@ -71,7 +71,7 @@ public class AIController : MonoBehaviour
                 cards[i].CardStart();
             }
         }
-        else if (_level > 15  )
+        else if (_level > 15 && _level <= 20)
         {
             int r = Random.Range(0, 2);
             if (r == 0)
