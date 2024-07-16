@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4230bbb06f7e6054eb23121bd2fb073a, type: 3}
-  m_Name: macho
+  m_Name: 8
   m_EditorClassIdentifier: 
-  hp: 1
-  icon: {fileID: 21300000, guid: 62f7ac19ecb7b2640ac3331837c028c5, type: 3}
-  damage: 010000000200000001000000000000000000000000000000
+  hp: 6
+  icon: {fileID: 21300000, guid: 0e3441df23dd79e429f3117940c718f7, type: 3}
+  damageAudio: {fileID: 8300000, guid: 13f7332120f5a8445aac71cae55b9bf6, type: 3}
+  healingAudio: {fileID: 8300000, guid: d9c78d413cd8d1a4b879e09dc2da79fe, type: 3}
+  damage: 020000000000000001000000020000000100000002000000
   hpPlus: 000000000000000000000000000000000000000000000000
